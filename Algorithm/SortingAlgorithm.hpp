@@ -19,9 +19,13 @@ namespace sort {
 	int merge_sort(int *arr, int startIndex, int endIndex);
 	int HeapAdjust(int *arr, int i, int nLength);
 	int heap_sort(int *arr, int n);
+	int bubble_sort(int *arr, int n);
 	int quick_sort(int *arr, int left, int right);
 	int shell_sort(int *arr, int start, int end);
 	BOOL comb_sort(int *array, int size);
+	int counting_sort(int *arr, int n);
+	int bucket_sort(int *arr, int n);
+	int radix_sort(int *arr, int n);
 }
 
 #endif // !SORTINGALGORITHM_H_INCLUDE
