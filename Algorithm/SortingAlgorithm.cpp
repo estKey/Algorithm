@@ -171,6 +171,7 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
+
 	/*Efficient Sorts*/
 	//merge_sort ---有问题未修复
 	/*
@@ -211,11 +212,11 @@ namespace sort {
 		if (startIndex < endIndex)
 		{
 			midIndex = (startIndex + endIndex) / 2;
-			merge_sort(arr, tempArr, startIndex, midIndex);
-			merge_sort(arr, tempArr, midIndex + 1, endIndex);
+			merge_sort(arr, startIndex, midIndex);
+			merge_sort(tempArr, midIndex + 1, endIndex);
 			Merge(arr, tempArr, startIndex, midIndex, endIndex);
 		}
-		putchar('\n');
+		//putchar('\n');
 		return EXIT_SUCCESS;
 	}
 	//heap_sort
@@ -376,6 +377,7 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
+
 	//counting_sort
 	//计数排序
 	/*
