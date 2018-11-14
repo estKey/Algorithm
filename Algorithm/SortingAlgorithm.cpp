@@ -173,7 +173,7 @@ namespace sort {
 	}
 
 	/*Efficient Sorts*/
-	//merge_sort ---有问题未修复
+	//merge_sort
 	/*
 	归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
 	归并排序是把序列递归地分成短序列，递归出口是短序列只有1个元素（认为直接有序）或者2个序列（1次比较和交换），然后把各个有序的段序列合并成一个有序的长序列，不断合并直到原序列全部排好序。
@@ -187,9 +187,10 @@ namespace sort {
 	4) 重复步骤3直到某一指针达到序列尾
 	5) 将另一序列剩下的所有元素直接复制到合并序列尾
 	*/
-	int Merge(int *sourceArr, int *tempArr, int startIndex, int midIndex, int endIndex)
+	int Merge(int *sourceArr, int startIndex, int midIndex, int endIndex)
 	{
 		int i = startIndex, j = midIndex + 1, k = startIndex;
+		int  *tempArr = (int *)malloc(sizeof(int)*(endIndex - startIndex +1));
 		while (i != midIndex + 1 && j != endIndex + 1)
 		{
 			if (sourceArr[i] >= sourceArr[j])
@@ -208,13 +209,12 @@ namespace sort {
 	//内部使用递归
 	int merge_sort(int *arr, int startIndex, int endIndex)
 	{
-		int midIndex, *tempArr = (int *)malloc(sizeof(arr));
 		if (startIndex < endIndex)
 		{
-			midIndex = (startIndex + endIndex) / 2;
+			int midIndex = (startIndex + endIndex) / 2;
 			merge_sort(arr, startIndex, midIndex);
-			merge_sort(tempArr, midIndex + 1, endIndex);
-			Merge(arr, tempArr, startIndex, midIndex, endIndex);
+			merge_sort(arr, midIndex + 1, endIndex);
+			Merge(arr, startIndex, midIndex, endIndex);
 		}
 		//putchar('\n');
 		return EXIT_SUCCESS;
