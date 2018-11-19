@@ -323,6 +323,7 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
+
 	//shell_sort
 	//希尔排序
 	int shell_sort(int *arr, int start, int end)
@@ -439,6 +440,7 @@ namespace sort {
 	*/
 	int bucket_sort(int *arr, int n)
 	{
+		int* buckets = (int *)malloc(sizeof(int) * n);
 
 		return EXIT_SUCCESS;
 	}
