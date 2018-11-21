@@ -1,12 +1,10 @@
 //SortingAlgorithm.hpp
 #pragma once
-#ifndef SORTINGALGORITHM_H_INCLUDE
-#define SORTINGALGORITHM_H_INCLUDE
+#ifndef SORTINGALGORITHM_HPP_INCLUDE
+#define SORTINGALGORITHM_HPP_INCLUDE
 
 namespace sort {
-#include <stdio.h>
-#include <Windows.h>
-#include <math.h>
+#include "stdafx.hpp"
 
 #define EXIT_SUCCESS 0
 
