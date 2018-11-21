@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Huffman.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SortingAlgorithm.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Huffman.hpp" />
     <ClInclude Include="SortingAlgorithm.hpp" />
     <ClInclude Include="stdafx.hpp" />
   </ItemGroup>
