@@ -1,6 +1,10 @@
-﻿//
-//Sorting Algorithm
+﻿//SortingAlgorithm.cpp
+
 #include "SortingAlgorithm.hpp"
+
+///<summary>
+///C Style Code
+///</ summary>
 //Accomplished [X] as measured by [Y] by doing [Z]!!!!!!!
 
 /*
@@ -14,7 +18,7 @@
 选择排序、快速排序、希尔排序、堆排序不是稳定的排序算法，而冒泡排序、插入排序、归并排序和基数排序是稳定的排序算法
 */
 namespace sort {
-	int SortingAlgorithm(int argc, char* argv) //Put it in main
+	int SortingAlgorithm(int argc, char* argv[]) //Put it in main
 	{
 		HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		do
@@ -36,10 +40,10 @@ namespace sort {
 				puts("Input array:");//输入的数组(按回车确认，按C重新输入)
 				for (int i = 0; i < n; i++)
 					printf("%d\t", *(arr + i));
-				puts("");
+				printf("\nPress Enter to Confirm, or Press C to Reload the array\n");
 				if (getchar() != 'C') break;
 			} while (1);
-			puts("Please Enter the sorting method tag:");//请选择排序类型
+			puts("Please Enter the sorting method tag:"); //请选择排序类型
 			puts("Simple Sorts:\n[1]:Insertion Sort*\t[2]:Selection Sort*\t[3]:Binary Search");
 			puts("Efficient Sorts:\n[4]:Merge Sort*\t\t[5]:Heap Sort*\t\t[6]:Quick Sort*");
 			puts("Bubble Sort and Variants:\n[7]:Bubble Sort*\t[8]:Sell Sort*\t\t[9]:Comb Sort");
@@ -85,8 +89,10 @@ namespace sort {
 		return EXIT_SUCCESS;
 	}
 
-
-	//Generate random array for testing performance when dealing with large quantities of array
+	/// <summary>
+	///Generate random array for testing performance when dealing with large quantities of array
+	/// </summary>
+	/// <param name="size, intrval">handle the length of the array and its dight number</param>
 	int *generateRandArr(int size, int interval)
 	{
 		int *dist = (int *)malloc(sizeof(int)*size);
@@ -105,7 +111,11 @@ namespace sort {
 	1）将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。
 	2）从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）
 	*/
-	int insertion_sort(int *arr, unsigned int n)
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
+	int insertion_sort(int *arr, int n)
 	{
 		for (int i = 1; i < n; i++)
 		{
@@ -116,7 +126,6 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
-	//selection_sort
 	//选择排序
 	/*
 	算法步骤：
@@ -124,7 +133,11 @@ namespace sort {
 	2）再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
 	3）重复第二步，直到所有元素均排序完毕。
 	*/
-	int selection_sort(int *arr, unsigned int n)
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
+	int selection_sort(int *arr, int n)
 	{
 		int i, j, min, t;
 		for (i = 0; i < n - 1; i++)
@@ -148,6 +161,10 @@ namespace sort {
 	没啥好说的
 	时间复杂度（logn)
 	*/
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int binary_sort(int *arr, int n)
 	{
 		int low, high, mid;
@@ -187,6 +204,10 @@ namespace sort {
 	4) 重复步骤3直到某一指针达到序列尾
 	5) 将另一序列剩下的所有元素直接复制到合并序列尾
 	*/
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, startIndex, midIndex, endIndex">handle the instance of the array and its start point and end point</param>
 	int Merge(int *sourceArr, int startIndex, int midIndex, int endIndex)
 	{
 		int i = startIndex, j = midIndex + 1, k = startIndex;
@@ -219,9 +240,12 @@ namespace sort {
 		//putchar('\n');
 		return EXIT_SUCCESS;
 	}
+
 	//heap_sort
 	//堆排序
 	/*
+	Heap Sort using Max Heap (Ascend)
+	Heap Sort using Min Heap (descend)
 	堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。
 	堆排序的平均时间复杂度为Ο(nlogn) 。
 	算法步骤：
@@ -232,6 +256,10 @@ namespace sort {
 	*/
 	//array是待调整的堆数组，i是待调整的数组元素的位置，nlength是数组的长度
 	//本函数功能是：根据数组array构建大根堆
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int HeapAdjust(int *arr, int i, int nLength)
 	{
 		int nChild;
@@ -254,6 +282,10 @@ namespace sort {
 		return EXIT_SUCCESS;
 	}
 	//堆排序算法
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int heap_sort(int *arr, int n)
 	{
 		int i;
@@ -275,6 +307,10 @@ namespace sort {
 		return EXIT_SUCCESS;
 	}
 	//quick_sort
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	//快速排序
 	/*
 	快速排序有两个方向，左边的i下标一直往右走，当a[i] <= a[center_index]，其中center_index是中枢元素的数组下标，一般取为数组第0个元素。
@@ -283,6 +319,10 @@ namespace sort {
 	交换a[j]和a[center_index]，完成一趟快速排序。
 	在中枢元素和a[j]交换的时候，很有可能把前面的元素的稳定性打乱，比如序列为5 3 3 4 3 8 9 10 11，现在中枢元素5和3（第5个元素，下标从1开始计）交换就会把元素3的稳定性打乱，所以快速排序是一个不稳定的排序算法，不稳定发生在中枢元素和a[j] 交换的时刻。
 	*/
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, left, right">handle the instance of the array and its leftmost and rightmost index</param>
 	int quick_sort(int *arr, int left, int right)
 	{
 		if (left < right)//表示已经完成一个组
@@ -304,6 +344,10 @@ namespace sort {
 
 	//bubble_sort
 	//冒泡排序
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int bubble_sort(int *arr, int n)
 	{
 		for (int i = 0; i < n - 1; i++)
@@ -326,6 +370,10 @@ namespace sort {
 
 	//shell_sort
 	//希尔排序
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, start, end">handle the instance of the array and its start point and end point</param>
 	int shell_sort(int *arr, int start, int end)
 	{
 		int increment = end - start + 1;    //初始化划分增量
@@ -339,7 +387,7 @@ namespace sort {
 						arr[j + increment] = arr[j];
 						j -= increment;
 					} while (j >= start && arr[j] > temp);
-					arr[j + increment] = temp;  //插入元素
+					arr[j + increment] = temp;  // insert element
 				}
 			}
 		} while (increment > 1);
@@ -348,11 +396,17 @@ namespace sort {
 	//comb_sort
 	//梳排序
 	/*
+	Comb Sort is Similar with the Shell Sort since it is improved base on Insertion Sort, while Comb Sort is improved base on Bubble Sort.
+
 	基本思想：梳排序和希尔排序很类似。希尔排序是在直接插入排序的基础上做的优化，而梳排序是在冒泡排序的基础上做的优化。
 	也是想希尔排序一样，将待排序序列通过增量分为若干个子序列，然后对子序列进行一趟冒泡排序，一步步减小增量，直至增量为1。所以梳排序的最后一次排序是冒泡排序。
 	梳排序增量是根据递减率减小的，递减率的设定影响着梳排序的效率。
 	*/
 #define     LAPSE_RATE  1.3 //以随机数作实验，得到最有效递减率为1.3，有待验证
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	BOOL comb_sort(int *arr, int size)
 	{
 		int i, j;
@@ -386,6 +440,10 @@ namespace sort {
 	它的优势在于在对一定范围内的整数排序时，它的复杂度为Ο(n+k)（其中k是整数的范围），快于任何比较排序算法。
 	当然这是一种牺牲空间换取时间的做法，而且当O(k)>O(n*log(n))的时候其效率反而不如基于比较的排序（基于比较的排序的时间复杂度在理论上的下限是O(n*log(n)), 如归并排序，堆排序）
 	*/
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int counting_sort(int *arr, int n)
 	{
 		int *ballot; //counter to store the numbers of each element
@@ -438,6 +496,10 @@ namespace sort {
 	当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ（n））。但桶排序并不是 比较排序，他不受到 O(n log n) 下限的影响。
 
 	*/
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int bucket_sort(int *arr, int n)
 	{
 		int* buckets = (int *)malloc(sizeof(int) * n);
@@ -458,6 +520,27 @@ namespace sort {
 	空间复杂度：O(N)
 	稳定性：稳定
 	*/
+	int findMaxDight(int *arr)
+	{
+		return 0;
+	}
+
+	int MSD(int *arr, int n)
+	{
+
+		return 0;
+	}
+
+	int LSD(int *arr, int n)
+	{
+
+		return 0;
+	}
+
+	/// <summary>
+	///Place Holder
+	/// </summary>
+	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int radix_sort(int *arr, int n)
 	{
 

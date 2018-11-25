@@ -53,7 +53,7 @@ namespace huffman {
 	};
 
 
-	int HuffmanCompression(int argc, char* argv);
+	int HuffmanCompression(int argc, char* argv[]);
 }
 
 #endif // !HUFFMAN_HPP_INCLUDED
