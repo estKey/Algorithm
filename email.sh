@@ -2,7 +2,7 @@
 
 git filter-branch --env-filter '
 
-OLD_EMAIL="16py4@queensu.ca"
+OLD_EMAIL="OLD_EMAIL@OLD_EMAIL_ADDRESS"
 CORRECT_NAME="estKey"
 CORRECT_EMAIL="estkey@outlook.com"
 
