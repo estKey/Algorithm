@@ -1,4 +1,6 @@
-#include "Huffman.hpp"
+//HuffmanAlgorithm.cpp
+
+#include "HuffmanAlgorithm.hpp"
 
 namespace huffman {
 	int HuffmanCompression(int argc, char* argv[])

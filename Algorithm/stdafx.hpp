@@ -16,7 +16,7 @@
 #include <math.h>
 
 #include "SortingAlgorithm.hpp"
-#include "Huffman.hpp"
+#include "HuffmanAlgorithm.hpp"
 
 #endif // !STDAFX_HPP_INCLUDED
 

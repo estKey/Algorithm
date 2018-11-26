@@ -23,7 +23,15 @@ namespace sort {
 	BOOL comb_sort(int *array, int size); // Ignore This if an error display
 	int counting_sort(int *arr, int n);
 	int bucket_sort(int *arr, int n);
+	int MSD(int *arr, int n);
+	int LSD(int *arr, int n);
 	int radix_sort(int *arr, int n);
+
+	// Assistant Functions
+	int *generateRandArr(int size, int interval);
+	int countDight(int x);
+	int findMaxDight(int *arr, int  n);
+
 }
 
 #endif // !SORTINGALGORITHM_H_INCLUDE

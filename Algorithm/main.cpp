@@ -1,10 +1,16 @@
-//
+// main.cpp
+// @Author EstKey
+// @
 #include "stdafx.hpp"
 void ui(int argc, char* argv[]);
 
+/// <summary>
+///Main
+/// </summary>
+/// <param name="argc, argv">handle the instance of the main entry</param>
 int main(int argc, char* argv[])
 {
-	//huffman::HuffmanCompression(argc, argv);
+	// UI start
 	ui(argc, argv);
 	printf("Compiled Successfully\n");
 	while (getchar() != '\n');
@@ -24,6 +30,10 @@ void ui(int argc, char* argv[])
 		case 1:
 			system("cls");
 			sort::SortingAlgorithm(argc, argv);
+			break;
+		case 2:
+			system("cls");
+			huffman::HuffmanCompression(argc, argv);
 			break;
 		default:
 			printf("Invalid Input, Press Enter to Select Again or Press e to Exit\n");

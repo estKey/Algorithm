@@ -1,4 +1,4 @@
-﻿//SortingAlgorithm.hpp
+﻿//HuffmanAlgorithm.hpp
 #pragma once
 #ifndef HUFFMAN_HPP_INCLUDED
 #define HUFFMAN_HPP_INCLUDED

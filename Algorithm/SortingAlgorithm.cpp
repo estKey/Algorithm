@@ -4,7 +4,7 @@
 
 ///<summary>
 ///C Style Code
-///</ summary>
+///</summary>
 //Accomplished [X] as measured by [Y] by doing [Z]!!!!!!!
 
 /*
@@ -18,7 +18,11 @@
 选择排序、快速排序、希尔排序、堆排序不是稳定的排序算法，而冒泡排序、插入排序、归并排序和基数排序是稳定的排序算法
 */
 namespace sort {
-	int SortingAlgorithm(int argc, char* argv[]) //Put it in main
+	/// <summary>
+	///The Entry Point of the SortingAlgorithm
+	/// </summary>
+	/// <param name="argc, argv">handle the instance of the main entry</param>
+	int SortingAlgorithm(int argc, char* argv[])
 	{
 		HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		do
@@ -520,20 +524,77 @@ namespace sort {
 	空间复杂度：O(N)
 	稳定性：稳定
 	*/
-	int findMaxDight(int *arr)
+	int countDight(int x)
 	{
-		return 0;
+		int count = 0;
+		while (x) {
+			x /= 10;
+			count++;
+		}
+		return count;
 	}
 
+	int findMaxDight(int *arr, int  n)
+	{
+		int maxdight;
+		for (int i = 0; i < n; i++)
+			maxdight = maxdight > countDight(arr[i]) ? maxdight : countDight(arr[i]);
+		return maxdight;
+	}
+
+	//Most Significant Digit first
 	int MSD(int *arr, int n)
 	{
+		int maxdight = findMaxDight(arr, n);
+		for (int k = maxdight - 1; k > -1; k++) {
+			int count[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+			int* tmp = (int*)malloc(sizeof(int) * n);
+			int* offset = (int*)malloc(sizeof(int) * 10);
+			for (int i = 0; i < n; i++)
+				count[((arr[i] / (int)pow(10, k)) % 10)]++;
+			offset[0] = 0;
+			for (int i = 1; i < 10; i++) {
+				offset[i] = 0;
+				for (int j = 0; j < i; j++) {
+					offset[i] += count[j];
+				}
+			}
 
-		return 0;
+			for (int i = 0; i < n; i++) {
+				tmp[offset[((arr[i] / (int)pow(10, k)) % 10)]++] = arr[i];
+			}
+			for (int i = 0; i < n; i++) {
+				arr[i] = tmp[i];
+			}
+		}
 	}
 
+	//Least Significant Digit first
 	int LSD(int *arr, int n)
 	{
+		int i, j, k;
+		int maxdight = findMaxDight(arr, n);
+		for (k = 0; k < maxdight; k++) {
+			int count[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+			int* tmp = (int*)malloc(sizeof(int) * n);
+			int* offset = (int*)malloc(sizeof(int) * 10);
+			for (i = 0; i < n; i++)
+				count[((arr[i] / (int)pow(10, k)) % 10)]++;
+			offset[0] = 0;
+			for (i = 1; i < 10; i++) {
+				offset[i] = 0;
+				for (j = 0; j < i; j++) {
+					offset[i] += count[j];
+				}
+			}
 
+			for (i = 0; i < n; i++) {
+				tmp[offset[((arr[i] / (int)pow(10, k)) % 10)]++] = arr[i];
+			}
+			for (i = 0; i < n; i++) {
+				arr[i] = tmp[i];
+			}
+		}
 		return 0;
 	}
 

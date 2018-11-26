@@ -21,7 +21,7 @@
     <ClCompile Include="SortingAlgorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Huffman.cpp">
+    <ClCompile Include="HuffmanAlgorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -37,7 +37,7 @@
     <ClInclude Include="stdafx.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Huffman.hpp">
+    <ClInclude Include="HuffmanAlgorithm.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
