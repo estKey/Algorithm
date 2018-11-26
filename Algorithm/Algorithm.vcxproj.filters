@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\SortingAlgorithmHelper">
+      <UniqueIdentifier>{cb091434-d8e8-40a8-b341-01f9ff5330c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -23,6 +26,12 @@
     </ClCompile>
     <ClCompile Include="HuffmanAlgorithm.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SortingAlgorithmHelper\maxheap.cpp">
+      <Filter>Source Files\SortingAlgorithmHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="SortingAlgorithmHelper\minheap.cpp">
+      <Filter>Source Files\SortingAlgorithmHelper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +48,12 @@
     </ClInclude>
     <ClInclude Include="HuffmanAlgorithm.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SortingAlgorithmHelper\maxheap.hpp">
+      <Filter>Source Files\SortingAlgorithmHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="SortingAlgorithmHelper\minheap.hpp">
+      <Filter>Source Files\SortingAlgorithmHelper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

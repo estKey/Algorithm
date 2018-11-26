@@ -145,6 +145,8 @@
     <ClCompile Include="HuffmanAlgorithm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SortingAlgorithm.cpp" />
+    <ClCompile Include="SortingAlgorithmHelper\maxheap.cpp" />
+    <ClCompile Include="SortingAlgorithmHelper\minheap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
@@ -152,6 +154,8 @@
   <ItemGroup>
     <ClInclude Include="HuffmanAlgorithm.hpp" />
     <ClInclude Include="SortingAlgorithm.hpp" />
+    <ClInclude Include="SortingAlgorithmHelper\maxheap.hpp" />
+    <ClInclude Include="SortingAlgorithmHelper\minheap.hpp" />
     <ClInclude Include="stdafx.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

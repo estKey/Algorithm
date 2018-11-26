@@ -5,6 +5,9 @@
 
 namespace sort {
 #include "stdafx.hpp"
+//Additional Headers
+#include "SortingAlgorithmHelper\maxheap.hpp"
+#include "SortingAlgorithmHelper\minheap.hpp"
 
 #define EXIT_SUCCESS 0
 
@@ -23,6 +26,7 @@ namespace sort {
 	BOOL comb_sort(int *array, int size); // Ignore This if an error display
 	int counting_sort(int *arr, int n);
 	int bucket_sort(int *arr, int n);
+	int bucket_sort_iteration(int *arr, int n);
 	int MSD(int *arr, int n);
 	int LSD(int *arr, int n);
 	int radix_sort(int *arr, int n);

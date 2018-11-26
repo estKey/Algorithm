@@ -519,7 +519,13 @@ namespace sort {
 	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int bucket_sort(int *arr, int n)
 	{
-		int b = 3;
+		bucket_sort_iteration(arr, n);
+	}
+
+	int bucket_sort_iteration(int *arr, int n)
+	{
+		//int b = findMaxDight(arr, n); // define buckets number by dights
+		int b = n / 2; // define buckets number by half
 		int* buckets = (int *)malloc(sizeof(int) * b);
 		int i, j, k;
 		for (i = 0; i < b; i++) // initialize buckets array
