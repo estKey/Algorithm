@@ -130,12 +130,18 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
+
 	//选择排序
 	/*
 	算法步骤：
 	1）首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置
 	2）再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
 	3）重复第二步，直到所有元素均排序完毕。
+
+	Time Complexity
+	Best Case O(N)
+	Average Case O(N^2)
+	Worst Case O(N^2)
 	*/
 	/// <summary>
 	///Place Holder
@@ -159,11 +165,16 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
+
 	//binary_sort
 	//二分排序
 	/*
 	没啥好说的
-	时间复杂度（logn)
+
+	Time Complexity
+	Best Case O(N)
+	Average Case O(Nlog(N))
+	Worst Case O(Nlog(N))
 	*/
 	/// <summary>
 	///Place Holder
@@ -259,7 +270,7 @@ namespace sort {
 	4） 重复步骤2，直到堆的尺寸为1
 	*/
 	//array是待调整的堆数组，i是待调整的数组元素的位置，nlength是数组的长度
-	//本函数功能是：根据数组array构建大根堆
+	//本函数功能是：根据数组array构建大根堆(Max Heap)
 	/// <summary>
 	///Place Holder
 	/// </summary>
@@ -285,7 +296,7 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
-	//堆排序算法
+	//堆排序算法 (使用伪堆)
 	/// <summary>
 	///Place Holder
 	/// </summary>
@@ -310,6 +321,7 @@ namespace sort {
 		}
 		return EXIT_SUCCESS;
 	}
+
 	//quick_sort
 	/// <summary>
 	///Place Holder
@@ -397,18 +409,18 @@ namespace sort {
 		} while (increment > 1);
 		return EXIT_SUCCESS;
 	}
+
 	//comb_sort
 	//梳排序
 	/*
-	Comb Sort is Similar with the Shell Sort since it is improved base on Insertion Sort, while Comb Sort is improved base on Bubble Sort.
-
+	
 	基本思想：梳排序和希尔排序很类似。希尔排序是在直接插入排序的基础上做的优化，而梳排序是在冒泡排序的基础上做的优化。
 	也是想希尔排序一样，将待排序序列通过增量分为若干个子序列，然后对子序列进行一趟冒泡排序，一步步减小增量，直至增量为1。所以梳排序的最后一次排序是冒泡排序。
 	梳排序增量是根据递减率减小的，递减率的设定影响着梳排序的效率。
 	*/
 #define     LAPSE_RATE  1.3 //以随机数作实验，得到最有效递减率为1.3，有待验证
 	/// <summary>
-	///Place Holder
+	/// Comb Sort is Similar with the Shell Sort since it is improved base on Insertion Sort, while Comb Sort is improved base on Bubble Sort.
 	/// </summary>
 	/// <param name="arr, n">handle the instance of the array and its length</param>
 	BOOL comb_sort(int *arr, int size)
@@ -473,7 +485,7 @@ namespace sort {
 		}
 		free(ballot);
 		for (int i = 0; i < n; i++)
-			printf("%d\t", dist[i]);
+			arr[i] = dist[i];
 		/**/
 		/*
 		int value = max;
@@ -492,12 +504,13 @@ namespace sort {
 		*/
 		return EXIT_SUCCESS;
 	}
+
 	//bucket_sort
 	//箱排序
 	/*
 	桶排序 (Bucket sort)或所谓的箱排序，是一个排序算法，工作的原理是将数组分到有限数量的桶子里。
 	每个桶子再个别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序）。桶排序是鸽巢排序的一种归纳结果。
-	当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ（n））。但桶排序并不是 比较排序，他不受到 O(n log n) 下限的影响。
+	当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ（N））。但桶排序并不是 比较排序，他不受到 O(N log N) 下限的影响。
 
 	*/
 	/// <summary>
@@ -506,10 +519,23 @@ namespace sort {
 	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int bucket_sort(int *arr, int n)
 	{
-		int* buckets = (int *)malloc(sizeof(int) * n);
-
+		int b = 3;
+		int* buckets = (int *)malloc(sizeof(int) * b);
+		int i, j, k;
+		for (i = 0; i < b; i++) // initialize buckets array
+			buckets[i] = 0;
+		for (i = 0; i < n; i++) // count number of repeated data in each bucket
+			buckets[arr[i]]++;
+		i = 0;
+		for (j = 0; j < b; j++) { // loop for every bucket
+			for (k = 0; k < buckets[j]; k++) {
+				arr[i] = j;
+				i++;
+			}
+		}
 		return EXIT_SUCCESS;
 	}
+
 	//radix_sort
 	//基数排序
 	/*基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或bin sort，
@@ -567,6 +593,7 @@ namespace sort {
 				arr[i] = tmp[i];
 			}
 		}
+		return 0;
 	}
 
 	//Least Significant Digit first
@@ -604,7 +631,8 @@ namespace sort {
 	/// <param name="arr, n">handle the instance of the array and its length</param>
 	int radix_sort(int *arr, int n)
 	{
-
+		//MSD(arr, n);
+		LSD(arr, n);
 		return EXIT_SUCCESS;
 	}
 }
