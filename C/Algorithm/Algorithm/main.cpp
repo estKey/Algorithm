@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
 void ui(int argc, char* argv[])
 {
-	printf("\\\***Welcom to Algorithms Study***///\n");
+	printf("***Welcom to Algorithms Study***\n");
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	do 
 	{
