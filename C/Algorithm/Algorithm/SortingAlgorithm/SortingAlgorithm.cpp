@@ -207,6 +207,8 @@ namespace sort {
 	/*Efficient Sorts*/
 	//merge_sort
 	/*
+	(以下归并排序为改进版)
+	时间复杂度 Best O(n)
 	归并排序（Merge sort）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
 	归并排序是把序列递归地分成短序列，递归出口是短序列只有1个元素（认为直接有序）或者2个序列（1次比较和交换），然后把各个有序的段序列合并成一个有序的长序列，不断合并直到原序列全部排好序。
 	可以发现，在1个或2个元素时，1个元素不会交换，2个元素如果大小相等也没有人故意交换，这不会破坏稳定性。
@@ -324,7 +326,7 @@ namespace sort {
 
 	//quick_sort
 	/// <summary>
-	///Place Holder
+	/// Place Holder
 	/// </summary>
 	/// <param name="arr, n">handle the instance of the array and its length</param>
 	//快速排序
